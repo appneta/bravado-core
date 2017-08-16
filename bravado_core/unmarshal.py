@@ -110,7 +110,7 @@ def unmarshal_object(swagger_spec, object_spec, object_value):
     if not is_dict_like(object_value):
       # This is the workaround for Alert Profile API tests, measureParam is
       # defined as 'object', which will raise exception here.
-      return
+        return
 #        raise SwaggerMappingError('Expected dict like type for {0}:{1}'.format(
 #            type(object_value), object_value))
 
