@@ -157,10 +157,10 @@ def marshal_model(swagger_spec, model_spec, model_value):
     if model_type is None:
         raise SwaggerMappingError('Unknown model {0}'.format(model_name))
 
-    if not isinstance(model_value, model_type):
-        raise SwaggerMappingError(
-            'Expected model of type {0} for {1}:{2}'
-            .format(model_name, type(model_value), model_value))
+    # if not isinstance(model_value, model_type):
+    #     raise SwaggerMappingError(
+    #         'Expected model of type {0} for {1}:{2}'
+    #         .format(model_name, type(model_value), model_value))
 
     # just convert the model to a dict and feed into `marshal_object` because
     # models are essentially 'type':'object' when marshaled
