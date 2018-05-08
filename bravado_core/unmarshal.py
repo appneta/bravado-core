@@ -30,6 +30,10 @@ def unmarshal_schema_object(swagger_spec, schema_object_spec, value):
     schema_object_spec = deref(schema_object_spec)
     obj_type = schema_object_spec['type']
 
+    if isinstance(value, int) and obj_type == 'string':
+        schema_object_spec['type'] = 'integer'
+        schema_object_spec['format'] = 'int32'
+ 
     if obj_type in SWAGGER_PRIMITIVES:
         return unmarshal_primitive(swagger_spec, schema_object_spec, value)
 
