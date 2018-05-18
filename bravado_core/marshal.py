@@ -29,7 +29,7 @@ def marshal_schema_object(swagger_spec, schema_object_spec, value):
     obj_type = schema_object_spec['type']
     
     if 'int' in str(type(value)) and obj_type == 'string':
-    schema_object_spec['type'] = 'integer'
+        schema_object_spec['type'] = 'integer'
 
     if obj_type in SWAGGER_PRIMITIVES:
         return marshal_primitive(swagger_spec, schema_object_spec, value)
